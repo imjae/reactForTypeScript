@@ -1,15 +1,34 @@
-function sum(x: number, y: number): number {
-    return x + y;
+interface Shape {
+    getArea(): number;
 }
 
-sum();
+class Circle implements Shape {
+    radius: number;
 
-function sumArray(numbers: number[]): number {
-    return numbers.reduce((acc, current) => acc + current, 0);
+    constructor(radius: number) {
+        this.radius = radius;
+    }
+
+    getArea() {
+        return this.radius * this.radius * Math.PI;
+    }
 }
 
-sumArray([1,2,3,4,5]);
+class Rectangle implements Shape {
+    width: number;
+    height: number;
+    constructor(width: number, height: number) {
+        this.width = width;
+        this.height = height;
+    }
 
-function returnNothing(): void {
-    console.log('i am just saying hello world');
+    getArea() {
+        return this.width * this.height;
+    }
 }
+
+const shapes: Shape[] = [new Circle(5), new Rectangle(10, 5)];
+
+shapes.forEach(shape => {
+    console.log(shape.getArea());
+})
