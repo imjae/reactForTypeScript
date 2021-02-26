@@ -3,9 +3,7 @@ interface Shape {
 }
 
 class Circle implements Shape {
-    radius: number;
-
-    constructor(radius: number) {
+    constructor(public radius: number) {
         this.radius = radius;
     }
 
@@ -15,9 +13,7 @@ class Circle implements Shape {
 }
 
 class Rectangle implements Shape {
-    width: number;
-    height: number;
-    constructor(width: number, height: number) {
+    constructor(private width: number, private height: number) {
         this.width = width;
         this.height = height;
     }
@@ -26,6 +22,12 @@ class Rectangle implements Shape {
         return this.width * this.height;
     }
 }
+
+const circle = new Circle(5);
+const rectangle = new Rectangle(10, 5);
+
+console.log(circle.radius);
+console.log(rectangle.width);
 
 const shapes: Shape[] = [new Circle(5), new Rectangle(10, 5)];
 
