@@ -31,4 +31,4 @@ const shapes: Shape[] = [new Circle(5), new Rectangle(10, 5)];
 
 shapes.forEach(shape => {
     console.log(shape.getArea());
-})
+});
