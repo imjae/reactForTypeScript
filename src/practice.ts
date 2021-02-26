@@ -1,24 +1,16 @@
-type Person = {
-  name: string;
-  age?: number;
-};
+function merge<A, B>(a: A, b: B): A & B {
+  return {
+    ...a,
+    ...b,
+  };
+}
 
-type Developer = Person & {
-  skills: string[];
-};
+const merged = merge({ foo: 1 }, { bar: 1 });
 
-const person: Person = {
-  name: "김사람",
-};
+function wrap<T>(param: T) {
+  return {
+    param,
+  };
+}
 
-const expert: Developer = {
-    name: '김계발',
-    skills: ['javascript', 'react']
-};
-
-type People = Person[];
-const people:People = [person, expert];
-
-type Color = 'red'|'orange'|'yellow';
-const color: Color = 'red';
-const colors: Color[] = ['red', 'orange'];
+const wrapped = wrap('a');
