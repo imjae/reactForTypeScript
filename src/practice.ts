@@ -1,19 +1,15 @@
-let count = 0;
-count += 1;
-count = '갑자기 분위기 문자열';
+function sum(x: number, y: number): number {
+    return x + y;
+}
 
-const message: string = 'hello world';
+sum();
 
-const doen: boolean = true;
+function sumArray(numbers: number[]): number {
+    return numbers.reduce((acc, current) => acc + current, 0);
+}
 
-const numbers: number[] = [1,2,3];
-const messages: string[] = ['hello', 'world'];
+sumArray([1,2,3,4,5]);
 
-messages.push(1);
-
-let mightBeUndefined: string | undefined = undefined;
-let nullableNumber: number | null = null;
-
-let color: 'red'|'orange'|'yellow' = 'red';
-color = 'yellow';
-color = 'green';
+function returnNothing(): void {
+    console.log('i am just saying hello world');
+}
